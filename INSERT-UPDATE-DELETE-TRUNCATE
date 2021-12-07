@@ -1,0 +1,52 @@
+-- INSERT
+--> IDENTITY KOLONUNA ELLE EKLEME YAPAMAYIZ.
+
+INSERT INTO Employees
+(
+FirstName,
+LastName,
+Title,
+City
+)
+VALUES
+(
+'Emre',
+'KISABOYUN',
+'Mr.',
+'İstanbul'
+)
+GO
+
+--> BUTUN KOLONLARA EKLEME YAPACAKSAK BU SEKILDE KULLANABILIRIZ.
+INSERT INTO Products
+VALUES
+(
+'Hamsi',
+(SELECT SupplierID FROM Suppliers WHERE CompanyName = 'Karkki Oy'),
+(SELECT CategoryID FROM Categories WHERE CategoryName = 'Seafood'),
+'KG başına 50 tane',
+2,
+200,
+50,
+25,
+0
+)
+GO
+
+-- UPDATE
+
+UPDATE Employees
+SET Title = 'Prof.'
+WHERE FirstName = 'Emre'
+GO
+
+-- DELETE 
+DELETE FROM Employees
+WHERE FirstName = 'Emre' AND LastName = 'KISABOYUN'
+GO
+
+-- TRUNCATE
+--> DELETE ILE SILME ISLEMI YAPTIGIMIZDA IDENTITY KOLON KALDIGI YERDEN DEVAM EDER TRUNCATE ILEBUTUN TABLO SIFIRLANIR VE 1 DEN EKLEMEYE DEVAM EDER.
+
+TRUNCATE TABLE TestTable
+GO
