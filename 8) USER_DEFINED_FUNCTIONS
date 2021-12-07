@@ -2,7 +2,7 @@
 
 CREATE FUNCTION ufnTopla
 (
-@sayi1 float,
+@sayi1 float,     --> bunlar functıon un parametreleridir.
 @sayi2 float
 )
 RETURNS float
